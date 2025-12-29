@@ -1,14 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Projects - Erickson Dela Soledad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#FFC815',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Space Mono', monospace; }
+    </style>
 </head>
-<body>
-    <h1>This page is under development</h1>
+<body class="bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 p-8 md:p-12 lg:p-16">
+    <div class="max-w-3xl">
+        <!-- Back Link -->
+        <div class="mb-12">
+            <a href="../index.html" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent">
+                ← Back
+            </a>
+        </div>
 
-    <h3>React Project</h3>
-    <a target="_blank" href="https://memory-game-4ez.pages.dev/">Simple Memory Game created using React</a>
+        <!-- Header -->
+        <header class="mb-16 md:mb-24">
+            <h1 class="text-4xl md:text-6xl font-bold">Projects</h1>
+        </header>
+
+        <!-- Projects List -->
+        <div class="space-y-12 mb-24">
+            <!-- Project 1 - Freelance -->
+            <article class="border-l-4 border-accent pl-6 py-2">
+                <div class="flex items-center gap-3 mb-3">
+                    <h2 class="text-2xl md:text-3xl font-bold">Wings Fine Arts</h2>
+                    <span class="px-3 py-1 text-xs font-bold bg-accent text-black">PAID FREELANCE</span>
+                </div>
+                <p class="opacity-70 mb-2 text-sm font-bold">PHP • HTMX • JavaScript • Tailwind CSS • Ecwid API</p>
+                <p class="opacity-70 mb-2 text-sm">Wingsfinearts.com, Texas • October 2025 - December 2025</p>
+                <p class="opacity-70 mb-4 leading-relaxed">
+                    Full-stack ecommerce web application. Revamped existing Shopify site with template
+                    to a custom-built Ecwid solution. Integrated Ecwid backend services and API. Deployed on Hostinger.
+                </p>
+                <div class="flex gap-4 flex-wrap">
+                    <a href="https://wings-fine-arts.com" target="_blank"
+                       class="text-accent hover:underline inline-flex items-center gap-2">
+                        <i class="fas fa-external-link-alt"></i>
+                        Old Site (Shopify)
+                    </a>
+                    <a href="https://wingsfinearts.com" target="_blank"
+                       class="text-accent hover:underline inline-flex items-center gap-2">
+                        <i class="fas fa-external-link-alt"></i>
+                        New Site (Ecwid)
+                    </a>
+                </div>
+            </article>
+
+            <!-- Project 2 - Personal -->
+            <article class="border-l-4 border-gray-400 dark:border-gray-600 pl-6 py-2">
+                <div class="flex items-center gap-3 mb-3">
+                    <h2 class="text-2xl md:text-3xl font-bold">Project NERRF</h2>
+                    <span class="px-3 py-1 text-xs font-bold border-2 border-gray-400 dark:border-gray-600">PERSONAL PROJECT</span>
+                </div>
+                <p class="opacity-70 mb-2 text-sm font-bold">Nginx • ElasticSearch • React • Redis • FastAPI</p>
+                <p class="opacity-70 mb-4 leading-relaxed">
+                    A full-stack image upload and search application with duplicate prevention, rate limiting,
+                    and asynchronous processing. Features thumbnail generation, full-text search capabilities,
+                    and containerized deployment.
+                </p>
+                <div class="flex gap-4 flex-wrap">
+                    <a href="https://nerrf.ericksondelasoledad.dev/" target="_blank"
+                       class="text-accent hover:underline inline-flex items-center gap-2">
+                        <i class="fas fa-external-link-alt"></i>
+                        Live Demo
+                    </a>
+                    <a href="https://github.com/ItsForJax/project-NERRF" target="_blank"
+                       class="text-accent hover:underline inline-flex items-center gap-2">
+                        <i class="fab fa-github"></i>
+                        Source Code
+                    </a>
+                </div>
+            </article>
+
+            <!-- Project 3 - Personal -->
+            <article class="border-l-4 border-gray-400 dark:border-gray-600 pl-6 py-2">
+                <div class="flex items-center gap-3 mb-3">
+                    <h2 class="text-2xl md:text-3xl font-bold">Memory Game</h2>
+                    <span class="px-3 py-1 text-xs font-bold border-2 border-gray-400 dark:border-gray-600">PERSONAL PROJECT</span>
+                </div>
+                <p class="opacity-70 mb-2 text-sm font-bold">React • JavaScript • CSS • Firebase</p>
+                <p class="opacity-70 mb-4 leading-relaxed">
+                    A simple memory game created using React. Features card flipping animations,
+                    score tracking, and responsive design.
+                </p>
+                <div class="flex gap-4 flex-wrap">
+                    <a href="https://memory-game-4ez.pages.dev/" target="_blank"
+                       class="text-accent hover:underline inline-flex items-center gap-2">
+                        <i class="fas fa-external-link-alt"></i>
+                        Live Demo
+                    </a>
+                    <a href="https://github.com/ItsForJax/memory-game" target="_blank"
+                       class="text-accent hover:underline inline-flex items-center gap-2">
+                        <i class="fab fa-github"></i>
+                        Source Code
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-32 pt-8 border-t border-gray-300 dark:border-gray-700 space-y-4">
+            <div class="flex flex-wrap gap-6 text-sm md:text-base">
+                <button id="themeToggle" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent">
+                    <span id="themeText">Light Mode</span>
+                </button>
+                <span class="opacity-50">•</span>
+                <span class="opacity-70">v. 2.0</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const themeText = document.getElementById('themeText');
+
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        html.classList.toggle('dark', currentTheme === 'dark');
+        updateThemeText();
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+            updateThemeText();
+        });
+
+        function updateThemeText() {
+            themeText.textContent = html.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+        }
+    </script>
 </body>
 </html>

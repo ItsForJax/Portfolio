@@ -1,11 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>About - Erickson Dela Soledad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#FFC815',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Space Mono', monospace; }
+    </style>
 </head>
-<body>
-    <h1>This page is under development</h1>
+<body class="bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 p-8 md:p-12 lg:p-16">
+    <div class="max-w-3xl">
+        <!-- Back Link -->
+        <div class="mb-12">
+            <a href="../index.html" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent">
+                ← Back
+            </a>
+        </div>
+
+        <!-- Header -->
+        <header class="mb-16 md:mb-24">
+            <h1 class="text-4xl md:text-6xl font-bold">About</h1>
+        </header>
+
+        <!-- Content -->
+        <div class="space-y-8 mb-24 leading-relaxed opacity-80">
+            <p class="text-lg md:text-xl">
+                Hi, I'm <span class="text-accent font-bold">Erickson Dela Soledad</span>
+                (aka Son, or 4jax).
+            </p>
+
+            <p>
+                I'm a Backend Engineer at Trend Micro specializing in DevSecOps and cloud infrastructure.
+                I work with AWS, Kubernetes, and Infrastructure as Code to build secure, scalable systems.
+            </p>
+
+            <p>
+                My expertise includes migrating microservices from ECS to EKS, managing ETL pipelines
+                with PySpark and EMR, and implementing GitOps workflows with ArgoCD and Terraform.
+                I've also built full-stack applications for IoT parking systems and ecommerce platforms.
+            </p>
+
+            <p>
+                When I'm not engineering solutions in the cloud, I take on freelance projects
+                and contribute to open-source development.
+            </p>
+        </div>
+
+        <!-- Contact Links -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold mb-6">Get in touch</h2>
+            <div class="flex flex-wrap gap-4">
+                <a href="https://www.linkedin.com/in/ericksonds/" target="_blank"
+                   class="px-6 py-3 border-2 border-gray-300 dark:border-gray-700 hover:border-accent transition-colors inline-flex items-center gap-2">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/ItsForJax" target="_blank"
+                   class="px-6 py-3 border-2 border-gray-300 dark:border-gray-700 hover:border-accent transition-colors inline-flex items-center gap-2">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                <a href="mailto:dadelos.ddls@gmail.com"
+                   class="px-6 py-3 border-2 border-gray-300 dark:border-gray-700 hover:border-accent transition-colors inline-flex items-center gap-2">
+                    <i class="fas fa-envelope"></i>
+                    Email
+                </a>
+            </div>
+        </div>
+
+        <!-- Internal Links -->
+        <div class="mb-24">
+            <h2 class="text-2xl font-bold mb-6">Explore</h2>
+            <div class="space-y-3 text-lg">
+                <div>
+                    <a href="projects.html" class="text-accent hover:underline border-b-2 border-transparent hover:border-accent">
+                        Projects →
+                    </a>
+                </div>
+                <div>
+                    <a href="resume.html" class="text-accent hover:underline border-b-2 border-transparent hover:border-accent">
+                        Resume →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-32 pt-8 border-t border-gray-300 dark:border-gray-700 space-y-4">
+            <div class="flex flex-wrap gap-6 text-sm md:text-base">
+                <button id="themeToggle" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent">
+                    <span id="themeText">Light Mode</span>
+                </button>
+                <span class="opacity-50">•</span>
+                <span class="opacity-70">v. 2.0</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const themeText = document.getElementById('themeText');
+
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        html.classList.toggle('dark', currentTheme === 'dark');
+        updateThemeText();
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+            updateThemeText();
+        });
+
+        function updateThemeText() {
+            themeText.textContent = html.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+        }
+    </script>
 </body>
 </html>

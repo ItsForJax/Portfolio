@@ -1,13 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume</title>
+    <title>Resume - Erickson Dela Soledad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#FFC815',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Space Mono', monospace; }
+    </style>
 </head>
-<body>
-    <h1>This page is under development</h1>
-    <h3>Resume Link!</h3>
-    <a target="_blank" href="https://drive.google.com/file/d/1Z_jcU1VvPDDSsqYMRmzuxr4ka5NiyN2E/view?usp=sharing">My Resume</a> <br>
+<body class="bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 p-8 md:p-12 lg:p-16">
+    <div class="max-w-3xl">
+        <!-- Back Link -->
+        <div class="mb-12">
+            <a href="../index.html" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent">
+                ← Back
+            </a>
+        </div>
+
+        <!-- Header -->
+        <header class="mb-16 md:mb-24">
+            <h1 class="text-4xl md:text-6xl font-bold">Resume</h1>
+        </header>
+
+        <!-- Content -->
+        <div class="space-y-12 mb-24">
+            <!-- Current Position -->
+            <div class="border-l-4 border-accent pl-6 py-2">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3">Backend Engineer</h2>
+                <p class="opacity-70 mb-4 text-sm md:text-base">
+                    Trend Micro • DevSecOps & Cloud Infrastructure
+                </p>
+                <p class="opacity-70 leading-relaxed">
+                    Building secure, scalable systems with AWS, Kubernetes, and Infrastructure as Code.
+                    Migrating microservices, managing ETL pipelines, and implementing GitOps workflows.
+                </p>
+            </div>
+
+            <!-- Expertise Grid -->
+            <div class="space-y-6 opacity-80">
+                <section>
+                    <h3 class="text-xl font-bold mb-4">Technical Expertise</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm md:text-base">
+                        <div class="space-y-2">
+                            <p class="font-bold text-accent">Backend & APIs</p>
+                            <p class="opacity-70">Python • FastAPI • Node.js • PHP</p>
+                        </div>
+                        <div class="space-y-2">
+                            <p class="font-bold text-accent">Cloud & DevSecOps</p>
+                            <p class="opacity-70">AWS • Kubernetes • Docker • Terraform</p>
+                        </div>
+                        <div class="space-y-2">
+                            <p class="font-bold text-accent">Data Engineering</p>
+                            <p class="opacity-70">PySpark • EMR • ETL Pipelines</p>
+                        </div>
+                        <div class="space-y-2">
+                            <p class="font-bold text-accent">CI/CD & GitOps</p>
+                            <p class="opacity-70">ArgoCD • GitHub Actions • Jenkins</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Key Projects -->
+            <div class="space-y-6 opacity-80">
+                <section>
+                    <h3 class="text-xl font-bold mb-4">Recent Highlights</h3>
+                    <div class="space-y-4 text-sm md:text-base leading-relaxed">
+                        <div>
+                            <p class="font-bold">ECS to EKS Migration</p>
+                            <p class="opacity-70">Led microservices migration to Kubernetes with zero downtime</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">Full-Stack Ecommerce Platform</p>
+                            <p class="opacity-70">Built custom solution with PHP, HTMX, and Ecwid API integration</p>
+                        </div>
+                        <div>
+                            <p class="font-bold">IoT Parking System</p>
+                            <p class="opacity-70">Developed real-time monitoring system with React and FastAPI</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Download Section -->
+            <div class="border-l-4 border-gray-400 dark:border-gray-600 pl-6 py-2">
+                <h3 class="text-xl font-bold mb-3">Full Resume</h3>
+                <p class="opacity-70 mb-4 leading-relaxed text-sm md:text-base">
+                    View complete work history, education, certifications, and detailed project descriptions.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://drive.google.com/file/d/1K7Lc4OQ8J8HjiR5p7YhyVcl6ZNkhe0_f/view?usp=sharing"
+                       target="_blank"
+                       class="text-accent hover:underline inline-flex items-center gap-2">
+                        <i class="fab fa-google-drive"></i>
+                        View on Drive
+                    </a>
+                    <a href="https://drive.google.com/uc?export=download&id=1K7Lc4OQ8J8HjiR5p7YhyVcl6ZNkhe0_f"
+                       target="_blank"
+                       class="text-accent hover:underline inline-flex items-center gap-2">
+                        <i class="fas fa-download"></i>
+                        Direct Download
+                    </a>
+                    <a href="https://docs.google.com/document/d/1K7Lc4OQ8J8HjiR5p7YhyVcl6ZNkhe0_f/edit?usp=sharing"
+                       target="_blank"
+                       class="text-accent hover:underline inline-flex items-center gap-2">
+                        <i class="fas fa-file-alt"></i>
+                        View in Docs
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-32 pt-8 border-t border-gray-300 dark:border-gray-700 space-y-4">
+            <div class="flex flex-wrap gap-6 text-sm md:text-base">
+                <button id="themeToggle" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent">
+                    <span id="themeText">Light Mode</span>
+                </button>
+                <span class="opacity-50">•</span>
+                <span class="opacity-70">v. 2.0</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const themeText = document.getElementById('themeText');
+
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        html.classList.toggle('dark', currentTheme === 'dark');
+        updateThemeText();
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+            updateThemeText();
+        });
+
+        function updateThemeText() {
+            themeText.textContent = html.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+        }
+    </script>
 </body>
 </html>

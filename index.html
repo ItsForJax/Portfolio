@@ -1,32 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erickson Dela Soledad</title>
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#FFC815',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: 'Space Mono', monospace; }
+    </style>
 </head>
-<body>
-    <div class="main">
-        <div class="logo">
-            <h1>eds;</h1>
-        </div>  
-        <div>
-            <h1 class="hi-there outline">Boss Emil</h1>
-            <div class="erickson outline"><a class="yellow">E</a>RICKSON P.</div>
-            <div class="erickson outline"><a class="yellow">D</a>ELA <a class="yellow">S</a>OLEDAD</div>
-        </div>
-                    
-        <menu>
-            <li><a href="#">Home</a></li>
-            <li><a href="pages/designs.html">Designs</a></li>
-            <li><a href="pages/aboutme.html">About Me</a> </li>
-            <li><a href="pages/projects.html">Projects</a></li>
-            <li><a href="pages/resume.html">Resume</a></li>
-        </menu>  
+<body class="bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 p-8 md:p-12 lg:p-16">
+    <div class="max-w-3xl">
+        <!-- Header -->
+        <header class="mb-16 md:mb-24">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                <span class="text-accent">Erickson</span> Dela Soledad
+            </h1>
+            <p class="text-lg md:text-xl opacity-70">Full Stack / Backend Engineer / DevSecOps</p>
+        </header>
 
+        <!-- Navigation -->
+        <nav class="mb-24 space-y-3 text-xl md:text-2xl">
+            <div>
+                <a href="pages/aboutme.html" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent">
+                    About
+                </a>
+            </div>
+            <div>
+                <a href="pages/projects.html" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent">
+                    Projects
+                </a>
+            </div>
+            <div>
+                <a href="pages/designs.html" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent">
+                    Designs
+                </a>
+            </div>
+            <div>
+                <a href="pages/resume.html" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent">
+                    Resume
+                </a>
+            </div>
+            <div>
+                <a href="pages/archive.html" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent">
+                    Archive
+                </a>
+            </div>
+        </nav>
+
+        <!-- Recent Work Section -->
+        <section class="mb-24">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8">Recent Work</h2>
+            <div class="space-y-6">
+                <div class="border-l-4 border-accent pl-4 py-2">
+                    <div class="flex items-center gap-2 mb-2">
+                        <h3 class="text-lg md:text-xl font-bold">Wings Fine Arts</h3>
+                        <span class="px-2 py-1 text-xs font-bold bg-accent text-black">FREELANCE</span>
+                    </div>
+                    <p class="opacity-70 mb-3">Full-stack ecommerce revamp • PHP, HTMX, Tailwind, Ecwid API</p>
+                    <div class="flex gap-4 flex-wrap">
+                        <a href="https://wingsfinearts.com" target="_blank"
+                           class="text-accent hover:underline inline-flex items-center gap-2">
+                            <i class="fas fa-external-link-alt"></i>
+                            View Site
+                        </a>
+                        <a href="pages/projects.html"
+                           class="text-accent hover:underline inline-flex items-center gap-2">
+                            More Details →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-32 pt-8 border-t border-gray-300 dark:border-gray-700 space-y-4">
+            <div class="flex flex-wrap gap-6 text-sm md:text-base">
+                <button id="themeToggle" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent">
+                    <span id="themeText">Light Mode</span>
+                </button>
+                <span class="opacity-50">•</span>
+                <span class="opacity-70">v. 2.0</span>
+            </div>
+            <div class="text-sm opacity-50">
+                © 2025 Erickson Dela Soledad
+            </div>
+        </footer>
     </div>
 
-    <script src="app.js"></script>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const themeText = document.getElementById('themeText');
+
+        // Check for saved theme preference or default to 'dark'
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        html.classList.toggle('dark', currentTheme === 'dark');
+        updateThemeText();
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const theme = html.classList.contains('dark') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+            updateThemeText();
+        });
+
+        function updateThemeText() {
+            themeText.textContent = html.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+        }
+    </script>
 </body>
 </html>
